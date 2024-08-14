@@ -16,13 +16,30 @@ export const DeleteBook = () => {
         });
     }, [bookID]);
 
+    const deleteBook = (id: number | undefined) => {
+        fetch(`/api/books/${id}`, { method: 'DELETE'})
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          console.log('Resource deleted successfully');
+        })
+        .catch(error => {
+          console.error('There was a problem with the DELETE request:', error.message);
+        });
+    };
+
     return (
         <div>
-        {data.title ? (<div>
-            <h1>Are you sure you want to delete {data.title} from booklist?</h1>
-        </div>) : (
-            <div>Book Not Found</div>
-        )}
+            {bookID && data.title ?
+            (
+                <div>
+                  <h1>Are you sure you want to delete {data.title} from booklist?</h1>
+                  <button className="deleteButton" onClick={() => deleteBook(parseInt(bookID))}>Delete</button>
+                </div>
+            ) : (
+                <div>Book Not Found</div>
+            )}
         </div>
     );
 };

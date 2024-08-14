@@ -1,6 +1,3 @@
-/**
- * Controller Definitions
- */
 import express, { Request, Response } from "express";
 import { Book } from "./book";
 import * as BookService from "./service";

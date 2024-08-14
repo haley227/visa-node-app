@@ -7,8 +7,15 @@ let bookList: Books = {
       title: "The Great Gatsby",
       author: "F. Scott Fitzgerald",
       yearPublished: 1925,
-        genre: "Fiction",
+      genre: "Fiction",
     },
+    2: {
+      id: 2,
+      title: "To Kill a Mockingbird",
+      author: "Harper Lee",
+      yearPublished: 1960,
+      genre: "Fiction",
+    }
   };
 
 export const findAll = async (): Promise<Book[]> => Object.values(bookList);
