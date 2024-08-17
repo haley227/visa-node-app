@@ -15,7 +15,28 @@ let bookList: Books = {
       author: "Harper Lee",
       yearPublished: 1960,
       genre: "Fiction",
-    }
+    },
+    3: {
+        id: 3,
+        title: "1984",
+        author: "George Orwell",
+        yearPublished: 1949,
+        genre: "Dystopian Fiction",
+    },
+    4: {
+        id: 4,
+        title: "Pride and Prejudice",
+        author: "Jane Austen",
+        yearPublished: 1813,
+        genre: "Romantic Fiction",
+    },
+    5: {
+        id: 5,
+        title: "The Catcher in the Rye",
+        author: "J.D. Salinger",
+        yearPublished: 1951,
+        genre: "Fiction",
+    },
   };
 
 export const findAll = async (): Promise<Book[]> => Object.values(bookList);

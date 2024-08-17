@@ -38,10 +38,10 @@ router.post("/", async (req: Request, res: Response) => {
     } catch (e: any) {
       res.status(500).send(e.message);
     }
-  });
+});
 
-  // edit book by ID
-  router.put("/:id", async (req: Request, res: Response) => {
+// edit book by ID
+router.put("/:id", async (req: Request, res: Response) => {
     const id: number = parseInt(req.params.id, 10);
 
     try {
@@ -59,7 +59,7 @@ router.post("/", async (req: Request, res: Response) => {
     } catch (e: any) {
       res.status(500).send(e.message);
     }
-  });
+});
 
 // DELETE book by ID
 router.delete("/:id", async (req: Request, res: Response) => {
