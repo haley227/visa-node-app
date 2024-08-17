@@ -1,13 +1,8 @@
-import { Link } from 'react-router-dom';
-import './BookCard.css';
-
-export interface BookCardProps {
-  id: number;
-  title: string;
-  author: string;
-  yearPublished: number;
-  genre: string;
-}
+import { useNavigate } from 'react-router-dom';
+import { StyledCard } from '../global/StyledCard.style';
+import { Button } from '../global/Button/Button';
+import { Book } from '../../utils/bookListContext/types';
+import { ButtonContainer } from '../global/Button/Button.style';
 
 export const BookCard = ({
     id,
@@ -15,16 +10,21 @@ export const BookCard = ({
     author,
     yearPublished,
     genre,
-}: BookCardProps) => {
+}: Book) => {
+    const navigate = useNavigate();
+
     return (
-        <div className="card">
-            <div className="card-body">
+        <StyledCard>
+            <div>
                 <h2>{title}</h2>
                 <p>Author: {author}</p>
                 <p>Published {yearPublished}</p>
                 <p>Genre: {genre}</p>
-                <Link to={`/edit/${id}`}>Edit Book</Link>
+                <ButtonContainer align='space-between'>
+                    <Button type="submit" onClick={() => navigate(`/edit/${id}`)} buttonText="Edit Book" />
+                    <Button type="error" buttonText='Delete Book' onClick={() => navigate(`delete/${id}`)} />
+                </ButtonContainer>
             </div>
-        </div>
+        </StyledCard>
     );
 };

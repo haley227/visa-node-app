@@ -1,25 +1,19 @@
-import { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
+import useBookList from '../../utils/bookListContext/useBookList';
+import { BookForm } from '../modules/BookForm';
+import { PageNotFound } from './PageNotFound';
 
 export const EditBook = () => {
-    const bookID = useParams().id;
-    const [data, setData] = useState({
-        title: "",
-    });
+  const { bookList, updateBook } = useBookList();
 
-    useEffect(() => {
-        fetch(`/api/books/${bookID}`)
-          .then((res) => res.json())
-          .then((data) => {
-            setData(data)
-        });
-    }, [bookID]);
+  const bookID = useParams().id;
+  const book = bookList.find((book) => book.id === parseInt(bookID || ''));
 
-    return (
-        <div>
-            <h1>Edit Book</h1>
-            <p>Book ID: {bookID}</p>
-            {data && <p>{data.title}</p>}
-        </div>
-    );
+  if (!book || !bookID) {
+    return <PageNotFound />;
+  }
+
+  return (
+    <BookForm title={`Edit ${book.title}`} book={book} onSubmit={updateBook} />
+  );
 };
