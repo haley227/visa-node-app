@@ -1,7 +1,7 @@
-import { Book, Books } from "./book";
+import { Book, BookList } from "./book";
 
 // In memory data store
-let bookList: Books = {
+let bookList: BookList = {
     1: {
       id: 1,
       title: "The Great Gatsby",
@@ -37,6 +37,13 @@ let bookList: Books = {
         yearPublished: 1951,
         genre: "Fiction",
     },
+    6: {
+        id: 6,
+        title: "The Hobbit",
+        author: "J.R.R. Tolkien",
+        yearPublished: 1937,
+        genre: "Fantasy",
+    },
   };
 
 export const findAll = async (): Promise<Book[]> => Object.values(bookList);
@@ -46,8 +53,8 @@ export const find = async (id: number): Promise<Book> => bookList[id];
 export const create = async (newItem: Book): Promise<Book> => {
     const id = new Date().valueOf();
     bookList[id] = {
-
       ...newItem,
+      id,
     };
     return bookList[id];
 };

@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { Book } from "./book";
+import { Book, BookList } from "./book";
 import * as BookService from "./service";
 
 export const router = express.Router();
@@ -65,6 +65,7 @@ router.put("/:id", async (req: Request, res: Response) => {
 router.delete("/:id", async (req: Request, res: Response) => {
     try {
       const id: number = parseInt(req.params.id, 10);
+
       await BookService.remove(id);
 
       res.sendStatus(204);

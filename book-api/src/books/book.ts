@@ -7,6 +7,6 @@ export interface Book {
   genre: string;
 }
 
-export interface Books {
+export interface BookList {
   [key: number]: Book;
 }
