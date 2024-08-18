@@ -8,7 +8,7 @@ export const StyledCard = styled.div`
   width: 100%;
 
   ${tabletUp(css`
-    width: 250px;
+    min-width: 250px;
     min-height: 250px;
   `)};
 `;

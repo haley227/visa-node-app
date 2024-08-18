@@ -8,7 +8,7 @@ export const ButtonContainer = styled.div<{ align: 'space-between' | 'space-arou
 `;
 
 export const StyledButton = styled.button<{ type: string }>`
-    background-color: ${({ type }) => (type === 'error' ? COLORS.errorRed : COLORS.skyBlue)};
+    background-color: ${({ type }) => (type === 'error' ? COLORS.errorRed : COLORS.visaBlue)};
     padding: 8px 16px;
     border-radius: 8px;
     color: white;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
 export const Body = styled.div`
-    padding: 2rem;
+  padding: 2rem;
 `;
