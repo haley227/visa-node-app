@@ -1,5 +1,5 @@
 import { BookCard } from "../modules/BookCard";
-import { BookCardsList, NewBookCard } from "./BookList.style";
+import { BookCardsList, NewBookCard, PageTitle } from "./BookList.style";
 import useBookList from "../../utils/bookListContext/useBookList";
 import { Book } from "../../utils/bookListContext/types";
 import { StyledCard } from "../global/StyledCard.style";
@@ -12,15 +12,16 @@ export const BookList = () => {
 
     return (
       <BookCardsList>
-          {bookList.map((book: Book) =>
-            <BookCard key={book.id} {...book} />
-          )}
-          <StyledCard>
+        <PageTitle>Book List</PageTitle>
+        <StyledCard>
             <NewBookCard onClick={() => navigate(`add`)}>
                 <PlusSVG />
                 <div>Add New Book</div>
             </NewBookCard>
           </StyledCard>
+          {bookList.map((book: Book) =>
+            <BookCard key={book.id} {...book} />
+          )}
       </BookCardsList>
     );
 };

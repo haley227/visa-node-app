@@ -5,6 +5,15 @@ export const BookCardsList = styled.div`
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+
+    > div {
+        width: 250px;
+    }
+`;
+
+export const PageTitle = styled.h1`
+    width: 100%;
+    text-align: center;
 `;
 
 export const NewBookCard = styled.div`

@@ -5,13 +5,13 @@ import { BookListProvider } from "../../utils/bookListContext/BookListProvider";
 
 export const Layout = () => {
   return (
-    <>
+    <main>
       <Nav />
       <BookListProvider>
         <Body>
             <Outlet />
         </Body>
       </BookListProvider>
-    </>
+    </main>
   )
 };
