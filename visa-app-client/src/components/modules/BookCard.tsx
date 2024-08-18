@@ -3,6 +3,7 @@ import { StyledCard } from '../global/StyledCard.style';
 import { Button } from '../global/Button/Button';
 import { Book } from '../../utils/bookListContext/types';
 import { ButtonContainer } from '../global/Button/Button.style';
+import { BookCardInner } from './BookForm.style';
 
 export const BookCard = ({
     id,
@@ -15,16 +16,18 @@ export const BookCard = ({
 
     return (
         <StyledCard>
-            <div>
-                <h2>{title}</h2>
-                <p>Author: {author}</p>
-                <p>Published {yearPublished}</p>
-                <p>Genre: {genre}</p>
+            <BookCardInner>
+                <div>
+                    <h2>{title}</h2>
+                    <p>Author: {author}</p>
+                    <p>Published {yearPublished}</p>
+                    <p>Genre: {genre}</p>
+                </div>
                 <ButtonContainer align='space-between'>
                     <Button type="submit" onClick={() => navigate(`/edit/${id}`)} buttonText="Edit Book" />
                     <Button type="error" buttonText='Delete Book' onClick={() => navigate(`delete/${id}`)} />
                 </ButtonContainer>
-            </div>
+            </BookCardInner>
         </StyledCard>
     );
 };

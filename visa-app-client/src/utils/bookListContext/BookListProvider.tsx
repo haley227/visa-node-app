@@ -13,20 +13,24 @@ import type {
   BookList,
   BookListUtils,
 } from './types';
+import { useNavigate } from 'react-router-dom';
 
 export const BookListContext = createContext<BookListUtils | undefined>(
   undefined,
 );
 
 export const BookListProvider = ({ children }: { children: ReactNode }) => {
+  const navigate = useNavigate();
   const [bookList, setBookList] = useState<BookList>([]);
   const baseEndpoint = `/api/books`;
 
-  const getMaxID = useCallback(() => {
-    console.log(bookList);
+  const onSuccess = (successMessage: string) => {
+    fetchBooks();
+    alert(successMessage);
+    navigate('/');
+  };
 
-    return Math.max(...bookList.map(o => o.id || 0), 0);
-  }, [bookList]);
+  const getMaxID = useCallback(() => Math.max(...bookList.map(o => o.id || 0), 0), [bookList]);
 
   const updateBook = (options: Book) => {
     return fetch(`${baseEndpoint}/${options?.id}/`, {
@@ -42,7 +46,9 @@ export const BookListProvider = ({ children }: { children: ReactNode }) => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        fetchBooks();
+        if (response.status === 200) {
+          onSuccess('Book updated successfully!');
+        }
     });
   };
 
@@ -52,8 +58,10 @@ export const BookListProvider = ({ children }: { children: ReactNode }) => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
-          console.log('Resource deleted successfully');
-          fetchBooks();
+
+          if (response.status === 204) {
+            onSuccess('Book deleted successfully');
+          }
         })
         .catch(error => {
           console.error('There was a problem with the DELETE request:', error.message);
@@ -73,12 +81,13 @@ export const BookListProvider = ({ children }: { children: ReactNode }) => {
       }),
     })
       .then(response => {
-        console.log('res', response);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        console.log('Resource created successfully');
-        fetchBooks();
+
+        if (response.status === 201) {
+          onSuccess('Book added successfully!');
+        }
       });
   };
 

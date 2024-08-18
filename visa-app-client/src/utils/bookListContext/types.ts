@@ -2,7 +2,7 @@ export interface BookListUtils {
     bookList: BookList;
     removeBook: (bookId: string) => Promise<void>;
     updateBook: (options: Book) => Promise<void>;
-    addBook: (options: Book) => Promise<void> | undefined;
+    addBook: (options: Book) => Promise<void>;
 }
 
 export interface Book {
