@@ -2,12 +2,13 @@ import styled, { css } from "styled-components";
 import { tabletUp } from "../../consts/breakpoints";
 
 export const StyledCard = styled.div`
-  padding: 32px;
-  border-radius: 8px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  padding: 1rem;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem 0 rgba(0,0,0,0.2);
   width: 100%;
 
   ${tabletUp(css`
+    padding: 2rem;
     min-width: 250px;
     min-height: 250px;
   `)};
