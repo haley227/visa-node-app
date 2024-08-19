@@ -25,24 +25,25 @@ This is a full-stack web application for managing a library of books. It consist
 ## Running the app
 ### Clone the repository
 
-```bash
 git clone https://github.com/haley227/visa-node-app.git
 cd visa-node-app
-Install Backend Dependencies
+
+# Install Backend Dependencies
 cd book-api
 npm install
 An .env file should exist with the following variables:
 PORT=3001
 
-Install Frontend Dependencies
+# Install Frontend Dependencies
 cd ../visa-app-client
 npm install
 
+# Start dev server
 cd ../book-api
 npm run dev
 The backend server will start on http://localhost:3001.
 
-Running the Frontend
+# Start app
 cd ../visa-app-client
 npm run start
 The frontend will start on http://localhost:3000.
