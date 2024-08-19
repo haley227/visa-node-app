@@ -7,60 +7,50 @@ This is a full-stack web application for managing a library of books. It consist
 
 - [Library Management System](#library-management-system)
   - [Table of Contents](#table-of-contents)
-  - [Running the app](#running-the-app)
     - [Frontend](#frontend)
     - [Backend](#backend)
+  - [Running the app](#running-the-app)
     - [Clone the repository](#clone-the-repository)
-
-## Running the app
+- [API Endpoints](#api-endpoints)
 
 ### Frontend
 - **React** - JavaScript library for building user interfaces
 - **React Router** - For routing within the application
-- **CSS/SCSS** - For styling components
+- **Styled Components** - For styling components
 
 ### Backend
 - **Node.js** - JavaScript runtime for building the backend
 - **Express** - Web framework for Node.js
 
-
+## Running the app
 ### Clone the repository
 
 ```bash
-git clone https://github.com/haleysmith/library-management-system.git
-cd library-management-system
+git clone https://github.com/haley227/visa-node-app.git
+cd visa-node-app
 Install Backend Dependencies
-bash
-Copy code
-cd backend
+cd book-api
 npm install
-Install Frontend Dependencies
-bash
-Copy code
-cd ../frontend
-npm install
-Configure Environment Variables
-Create a .env file in the backend directory with the following variables:
-
-env variables
+An .env file should exist with the following variables:
 PORT=3001
 
-Clone repo
-Copy code
-cd book-api
-npm start
+Install Frontend Dependencies
+cd ../visa-app-client
+npm install
+
+cd ../book-api
+npm run dev
 The backend server will start on http://localhost:3001.
 
 Running the Frontend
-
 cd ../visa-app-client
-npm start
+npm run start
 The frontend will start on http://localhost:3000.
 
 Accessing the Application
 Open your browser and navigate to http://localhost:3000 to access the library management app.
 
-API Endpoints
+# API Endpoints
 Here are some of the main API endpoints:
 
 GET /api/books - Get a list of all books
