@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import type { ReactNode } from 'react';
-import React, {
+import {
   useCallback,
   useMemo,
   useEffect,

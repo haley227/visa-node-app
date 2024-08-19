@@ -1,6 +1,6 @@
 import {useParams} from 'react-router-dom';
-import useBookList from '../../utils/bookListContext/useBookList';
-import { BookForm } from '../modules/BookForm';
+import useBookList from 'utils/bookListContext/useBookList';
+import { BookForm } from 'components/modules/BookForm';
 import { PageNotFound } from './PageNotFound';
 
 export const EditBook = () => {

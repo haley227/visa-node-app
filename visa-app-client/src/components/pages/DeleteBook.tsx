@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom";
-import useBookList from "../../utils/bookListContext/useBookList";
-import { StyledCard } from "../global/StyledCard.style";
-import { Button } from "../global/Button/Button";
-import { ButtonContainer } from "../global/Button/Button.style";
+import useBookList from "utils/bookListContext/useBookList";
+import { StyledCard } from "components/global/StyledCard.style";
+import { Button, ButtonContainer } from "components/global/Button";
 import { PageNotFound } from "./PageNotFound";
-import { CentralMessage } from "../global/CentralMessage.style";
+import { CentralMessage } from "components/global/CentralMessage.style";
 
 export const DeleteBook = () => {
     const { bookList, removeBook } = useBookList();

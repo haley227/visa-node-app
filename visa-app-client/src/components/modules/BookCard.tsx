@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import { StyledCard } from '../global/StyledCard.style';
-import { Button } from '../global/Button/Button';
-import { Book } from '../../utils/bookListContext/types';
-import { ButtonContainer } from '../global/Button/Button.style';
-import { BookCardInner } from './BookForm.style';
+import { StyledCard } from 'components/global/StyledCard.style';
+import { Button } from 'components/global/Button/Button';
+import { Book } from 'utils/bookListContext/types';
+import { ButtonContainer } from 'components/global/Button/Button.style';
+import { BookCardInner } from './BookForm';
 
 export const BookCard = ({
     id,

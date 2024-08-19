@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import COLORS from "../../../consts/colors";
+import COLORS from "consts/colors";
 import { Link } from "react-router-dom";
 
 export const NavContainer = styled.nav`
@@ -22,7 +22,7 @@ export const NavLink = styled(Link)`
         ${COLORS.skyBlue} 50%,
         #000 50%
     );
-    
+
     background-size: 200% 100%;
     background-position: -100%;
     display: inline-block;

@@ -1,4 +1,4 @@
-import { CentralMessage } from "../global/CentralMessage.style";
+import { CentralMessage } from "components/global/CentralMessage.style";
 
 export const PageNotFound = () => {
     return (

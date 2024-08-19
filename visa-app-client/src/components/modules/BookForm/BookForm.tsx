@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Book } from "../../utils/bookListContext/types";
-import { Button } from "../global/Button/Button";
-import { StyledCard } from "../global/StyledCard.style"
+import { Book } from "utils/bookListContext/types";
+import { Button } from "components/global/Button/Button";
+import { StyledCard } from "components/global/StyledCard.style"
 import { FormRow, StyledForm, Title } from "./BookForm.style";
-import { CentralMessage } from "../global/CentralMessage.style";
+import { CentralMessage } from "components/global/CentralMessage.style";
 
 export const BookForm = ({ title, book, onSubmit }: { title?: string; book?: Book; onSubmit: (formData: any) => void; }) => {
     const defaultValues = book || {

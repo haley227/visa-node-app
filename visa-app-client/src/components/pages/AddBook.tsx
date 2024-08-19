@@ -1,5 +1,5 @@
-import useBookList from '../../utils/bookListContext/useBookList';
-import { BookForm } from '../modules/BookForm';
+import useBookList from 'utils/bookListContext/useBookList';
+import { BookForm } from 'components/modules/BookForm';
 
 export const AddBook = () => {
   const { addBook } = useBookList();

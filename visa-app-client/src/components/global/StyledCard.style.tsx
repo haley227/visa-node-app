@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { tabletUp } from "../../consts/breakpoints";
+import { tabletUp } from "consts/breakpoints";
 
 export const StyledCard = styled.div`
   padding: 1rem;

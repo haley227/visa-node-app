@@ -1,9 +1,9 @@
-import { BookCard } from "../modules/BookCard";
+import { BookCard } from "components/modules/BookCard";
 import { BookCardsList, NewBookCard, PageTitle } from "./BookList.style";
-import useBookList from "../../utils/bookListContext/useBookList";
-import { Book } from "../../utils/bookListContext/types";
-import { StyledCard } from "../global/StyledCard.style";
-import { ReactComponent as PlusSVG } from '../../assets/plus.svg';
+import useBookList from "utils/bookListContext/useBookList";
+import { Book } from "utils/bookListContext/types";
+import { StyledCard } from "components/global/StyledCard.style";
+import { ReactComponent as PlusSVG } from 'assets/plus.svg';
 import { useNavigate } from "react-router-dom";
 
 export const BookList = () => {

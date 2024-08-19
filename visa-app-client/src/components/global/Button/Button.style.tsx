@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import COLORS from "../../../consts/colors";
+import COLORS from "consts/colors";
 
 export const ButtonContainer = styled.div<{ align: 'space-between' | 'space-around' | 'center' }>`
   display: flex;
