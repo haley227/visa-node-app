@@ -43,7 +43,7 @@ This is a full-stack web application for managing a library of books. It consist
 ```npm install```
 
 # Start dev server
-```cd ../book-api```
+```cd ../book-api``` <br />
 ```npm run dev```
 The backend server will start on http://localhost:3001.
 
