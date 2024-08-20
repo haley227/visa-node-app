@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Book } from 'utils/bookListContext/types';
 import { Button } from 'components/global/Button/Button';
 import { StyledCard } from 'components/global/StyledCard.style';
-import { ErrorText, FormRow, StyledForm, Title } from './BookForm.style';
+import { ErrorText, FormRow, FormInput, StyledForm, Title } from './BookForm.style';
 import { CentralMessage } from 'components/global/CentralMessage.style';
 
 export const BookForm = ({
@@ -57,21 +57,23 @@ export const BookForm = ({
         <StyledForm onSubmit={handleSubmit}>
           <FormRow>
             <label htmlFor="title">Title</label>
-            <input
+            <FormInput
               aria-label="title"
               type="text"
               name="title"
               defaultValue={book?.title}
+              hasError={!!error}
               onChange={handleInputChange}
               required
             />
           </FormRow>
           <FormRow>
             <label htmlFor="author">Author</label>
-            <input
+            <FormInput
               aria-label="author"
               type="text"
               name="author"
+              hasError={!!error}
               defaultValue={book?.author}
               onChange={handleInputChange}
               required
@@ -79,10 +81,11 @@ export const BookForm = ({
           </FormRow>
           <FormRow>
             <label htmlFor="yearPublished">Year Published</label>
-            <input
+            <FormInput
               type="number"
               aria-label="year published"
               name="yearPublished"
+              hasError={!!error}
               defaultValue={book?.yearPublished}
               onChange={handleInputChange}
               required
@@ -91,10 +94,11 @@ export const BookForm = ({
           </FormRow>
           <FormRow>
             <label htmlFor="genre">Genre</label>
-            <input
+            <FormInput
               type="text"
               aria-label="genre"
               name="genre"
+              hasError={!!error}
               defaultValue={book?.genre}
               onChange={handleInputChange}
               required

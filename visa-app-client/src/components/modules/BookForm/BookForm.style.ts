@@ -1,5 +1,6 @@
+import { mobileUp, tabletUp } from 'consts/breakpoints';
 import COLORS from 'consts/colors';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledForm = styled.form`
   display: flex;
@@ -9,7 +10,6 @@ export const StyledForm = styled.form`
 
 export const FormRow = styled.div`
   display: flex;
-  gap: 1rem;
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 4px;
@@ -17,6 +17,26 @@ export const FormRow = styled.div`
   button {
     width: 100%;
   }
+
+  ${mobileUp(css`
+    gap: 1rem;
+  `)};
+`;
+
+export const FormInput = styled.input< { hasError?: boolean; } >`
+  padding: .5rem;
+  border: 1px solid ${COLORS.gray2};
+  border-radius: .25rem;
+  box-sizing: border-box;
+  align-items: center;
+
+  ${({ hasError }) => hasError && `
+    border-color: ${COLORS.errorRed};
+  `}
+
+  ${tabletUp(css`
+    padding: 1rem;
+  `)};
 `;
 
 export const BookCardInner = styled.div`
