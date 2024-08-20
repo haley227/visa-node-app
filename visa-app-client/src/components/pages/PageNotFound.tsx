@@ -1,9 +1,13 @@
-import { CentralMessage } from 'components/global/CentralMessage.style';
+import { NotFoundBody, NotFoundContainer } from './PageNotFound.style';
 
 export const PageNotFound = () => {
   return (
-    <CentralMessage>
-      <h1>404 - Page Not Found!</h1>
-    </CentralMessage>
+    <NotFoundBody>
+      <NotFoundContainer>
+        <h1>404</h1>
+        <p>Page not found</p>
+        <a href="/">Go Home</a>
+      </NotFoundContainer>
+    </NotFoundBody>
   );
 };
