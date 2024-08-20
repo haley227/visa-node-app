@@ -1,4 +1,4 @@
-import { css,  StyledObject } from "styled-components";
+import { css, StyledObject } from 'styled-components';
 
 const size = {
   tablet: '768px',

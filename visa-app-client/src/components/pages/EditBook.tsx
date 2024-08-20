@@ -1,4 +1,4 @@
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useBookList from 'utils/bookListContext/useBookList';
 import { BookForm } from 'components/modules/BookForm';
 import { PageNotFound } from './PageNotFound';
@@ -13,7 +13,5 @@ export const EditBook = () => {
     return <PageNotFound />;
   }
 
-  return (
-    <BookForm title={`Edit ${book.title}`} book={book} onSubmit={updateBook} />
-  );
+  return <BookForm title={`Edit ${book.title}`} book={book} onSubmit={updateBook} />;
 };

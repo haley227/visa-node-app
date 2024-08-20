@@ -4,7 +4,5 @@ import { BookForm } from 'components/modules/BookForm';
 export const AddBook = () => {
   const { addBook } = useBookList();
 
-    return (
-      <BookForm title={'Add New Book'} onSubmit={addBook} />
-    );
+  return <BookForm title={'Add New Book'} onSubmit={addBook} />;
 };

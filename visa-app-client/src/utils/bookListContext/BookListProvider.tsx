@@ -1,23 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import type { ReactNode } from 'react';
-import {
-  useCallback,
-  useMemo,
-  useEffect,
-  useState,
-  createContext,
-} from 'react';
+import { useCallback, useMemo, useEffect, useState, createContext } from 'react';
 
-import type {
-  Book,
-  BookList,
-  BookListUtils,
-} from './types';
+import type { Book, BookList, BookListUtils } from './types';
 import { useNavigate } from 'react-router-dom';
 
-export const BookListContext = createContext<BookListUtils | undefined>(
-  undefined,
-);
+export const BookListContext = createContext<BookListUtils | undefined>(undefined);
 
 export const BookListProvider = ({ children }: { children: ReactNode }) => {
   const navigate = useNavigate();
@@ -30,7 +18,7 @@ export const BookListProvider = ({ children }: { children: ReactNode }) => {
     navigate('/');
   };
 
-  const getMaxID = useCallback(() => Math.max(...bookList.map(o => o.id || 0), 0), [bookList]);
+  const getMaxID = useCallback(() => Math.max(...bookList.map((o) => o.id || 0), 0), [bookList]);
 
   const updateBook = (options: Book) => {
     return fetch(`${baseEndpoint}/${options?.id}/`, {
@@ -42,30 +30,30 @@ export const BookListProvider = ({ children }: { children: ReactNode }) => {
       body: JSON.stringify({
         ...options,
       }),
-    }).then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        if (response.status === 200) {
-          onSuccess('Book updated successfully!');
-        }
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      if (response.status === 200) {
+        onSuccess('Book updated successfully!');
+      }
     });
   };
 
   const removeBook = (bookId: string) => {
-    return fetch(`/api/books/${bookId}`, { method: 'DELETE'})
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
+    return fetch(`/api/books/${bookId}`, { method: 'DELETE' })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
 
-          if (response.status === 204) {
-            onSuccess('Book deleted successfully');
-          }
-        })
-        .catch(error => {
-          console.error('There was a problem with the DELETE request:', error.message);
-        });
+        if (response.status === 204) {
+          onSuccess('Book deleted successfully');
+        }
+      })
+      .catch((error) => {
+        console.error('There was a problem with the DELETE request:', error.message);
+      });
   };
 
   const addBook = (options: Book) => {
@@ -79,22 +67,21 @@ export const BookListProvider = ({ children }: { children: ReactNode }) => {
         id: getMaxID() + 1,
         ...options,
       }),
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
 
-        if (response.status === 201) {
-          onSuccess('Book added successfully!');
-        }
-      });
+      if (response.status === 201) {
+        onSuccess('Book added successfully!');
+      }
+    });
   };
 
   const fetchBooks = useCallback(() => {
-    fetch("/api/books")
-        .then((res) => res.json())
-        .then((data) => setBookList(data));
+    fetch('/api/books')
+      .then((res) => res.json())
+      .then((data) => setBookList(data));
   }, [setBookList, baseEndpoint]);
 
   useEffect(() => {
@@ -108,15 +95,7 @@ export const BookListProvider = ({ children }: { children: ReactNode }) => {
       updateBook,
       addBook,
     };
-  }, [
-      removeBook,
-      updateBook,
-      addBook,
-  ]);
+  }, [removeBook, updateBook, addBook]);
 
-  return (
-    <BookListContext.Provider value={bookListUtils}>
-      {children}
-    </BookListContext.Provider>
-  );
+  return <BookListContext.Provider value={bookListUtils}>{children}</BookListContext.Provider>;
 };
