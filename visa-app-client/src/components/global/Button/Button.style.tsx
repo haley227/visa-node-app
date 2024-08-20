@@ -1,10 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import COLORS from 'consts/colors';
+import { tabletUp } from 'consts/breakpoints';
 
 export const ButtonContainer = styled.div<{ align: 'space-between' | 'space-around' | 'center' }>`
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  gap: .5rem;
   justify-content: ${({ align }) => align};
+
+  ${tabletUp(css`
+    flex-direction: row;
+    gap: 1rem;
+  `)};
 `;
 
 export const StyledButton = styled.button<{ type: string }>`
@@ -20,7 +27,7 @@ export const StyledButton = styled.button<{ type: string }>`
     filter: brightness(85%);
   }
   &:disabled {
-    background-color: ${COLORS.grey1};
+    background-color: ${COLORS.gray2};
     cursor: not-allowed;
   }
 `;

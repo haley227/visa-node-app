@@ -7,7 +7,7 @@ export const NavContainer = styled.nav`
   gap: 1rem;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: ${COLORS.grey1};
+  background-color: ${COLORS.gray1};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
@@ -16,8 +16,7 @@ export const NavLink = styled(Link)`
   color: ${COLORS.black};
   font-weight: 600;
   font-size: 1.2rem;
-  background-image: linear-gradient(to right, ${COLORS.skyBlue}, ${COLORS.skyBlue} 50%, #000 50%);
-
+  background-image: linear-gradient(to right, ${COLORS.visaBlue}, ${COLORS.visaBlue} 50%, #000 50%);
   background-size: 200% 100%;
   background-position: -100%;
   display: inline-block;
@@ -29,7 +28,7 @@ export const NavLink = styled(Link)`
 
   &:before {
     content: '';
-    background: ${COLORS.skyBlue};
+    background: ${COLORS.visaBlue};
     display: block;
     position: absolute;
     bottom: -3px;
