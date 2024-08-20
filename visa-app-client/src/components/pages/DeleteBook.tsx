@@ -4,6 +4,7 @@ import { StyledCard } from 'components/global/StyledCard.style';
 import { Button, ButtonContainer } from 'components/global/Button';
 import { PageNotFound } from './PageNotFound';
 import { CentralMessage } from 'components/global/CentralMessage.style';
+import { InnerBox } from './Delete.style';
 
 export const DeleteBook = () => {
   const { bookList, removeBook } = useBookList();
@@ -18,12 +19,12 @@ export const DeleteBook = () => {
   return (
     <CentralMessage>
       <StyledCard>
-        <div>
-          <h1>Are you sure you want to delete {book.title} from booklist?</h1>
+        <InnerBox>
+          <h1>Are you sure you want to delete <br />{book.title}?</h1>
           <ButtonContainer align="center">
             <Button type="error" onClick={() => removeBook(bookID)} buttonText="Delete" />
           </ButtonContainer>
-        </div>
+        </InnerBox>
       </StyledCard>
     </CentralMessage>
   );
