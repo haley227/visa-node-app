@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { tabletUp } from 'consts/breakpoints';
+import styled, { css } from 'styled-components';
 
 export const BookCardsList = styled.div`
   display: flex;
@@ -6,9 +7,11 @@ export const BookCardsList = styled.div`
   gap: 1rem;
   justify-content: center;
 
-  > div {
-    width: 250px;
-  }
+  ${tabletUp(css`
+    > div {
+      width: 250px;
+    }
+  `)};
 `;
 
 export const PageTitle = styled.h1`
