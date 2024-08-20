@@ -31,26 +31,26 @@ This is a full-stack web application for managing a library of books. It consist
 ## Running the app
 
 ### Clone the repository
-```git clone https://github.com/haley227/visa-node-app.git```
-```cd visa-node-app```
+```git clone https://github.com/haley227/visa-node-app.git``` <br />
+```cd visa-node-app``` 
 
 ### Install Backend Dependencies
-```cd book-api```
+```cd book-api``` <br />
 ```npm install```
 
 ### Install Frontend Dependencies
-```cd ../visa-app-client```
+```cd ../visa-app-client``` <br />
 ```npm install```
 
 # Start dev server
-```cd ../book-api``` <br />
-```npm run dev```
+```cd ../book-api``` <br /> 
+```npm run dev``` <br />
 The backend server will start on http://localhost:3001.
 
 # Start the app
 In another terminal, run the following commands
-```cd ../visa-app-client```
-```npm run start```
+```cd ../visa-app-client``` <br />
+```npm run start``` <br />
 The frontend will start on http://localhost:3000.
 
 # Accessing the Application
